@@ -10,10 +10,9 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 import com.shootoff.camera.Shot;
-import com.shootoff.gui.Hit;
+import com.shootoff.targets.Hit;
+import com.shootoff.targets.Target;
 import com.shootoff.util.NamedThreadFactory;
-
-import javafx.scene.Group;
 
 public class PistolIsometrics extends TrainingExerciseBase implements TrainingExercise {
 	private static final int START_DELAY = 5; // s
@@ -26,7 +25,7 @@ public class PistolIsometrics extends TrainingExerciseBase implements TrainingEx
 
 	public PistolIsometrics() {}
 
-	public PistolIsometrics(List<Group> targets) {
+	public PistolIsometrics(List<Target> targets) {
 		super(targets);
 		api = super.getInstance();
 	}
@@ -125,7 +124,7 @@ public class PistolIsometrics extends TrainingExerciseBase implements TrainingEx
 	}
 
 	@Override
-	public void reset(List<Group> targets) {
+	public void reset(List<Target> targets) {
 		repeatExercise = false;
 		executorService.shutdownNow();
 
