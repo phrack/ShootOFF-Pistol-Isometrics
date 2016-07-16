@@ -32,7 +32,7 @@ public class PistolIsometrics extends TrainingExerciseBase implements TrainingEx
 
 	@Override
 	public ExerciseMetadata getInfo() {
-		return new ExerciseMetadata("Pistol Isometrics", "1.3", "phrack",
+		return new ExerciseMetadata("Pistol Isometrics", "1.4", "phrack",
 				"This exercise walks you through hold exercises to strengthen "
 						+ "arm and hand muscles that help you shoot a pistol accurately. "
 						+ "You will be asked to shoot, then you must shoot until you hit "
@@ -47,6 +47,9 @@ public class PistolIsometrics extends TrainingExerciseBase implements TrainingEx
 		startRound();
 	}
 
+	@Override
+	public void targetUpdate(Target target, TargetChange change) { }
+	
 	private void startRound() {
 		super.pauseShotDetection(true);
 		// Standard sound file shipped with ShootOFF
